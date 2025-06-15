@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "title": "Akira",
+    "genre": "Ciencia ficción, Cyberpunk",
+    "poster_path": "/images/akira.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Spirited Away",
+    "genre": "Fantasía, Aventura",
+    "poster_path": "/images/spirited-away.jpg"
+  },
+  {
+    "id": 3,
+    "title": "Your Name",
+    "genre": "Romance, Fantasía",
+    "poster_path": "/images/your-name.jpg"
+  },
+  {
+    "id": 4,
+    "title": "Princess Mononoke",
+    "genre": "Fantasía, Aventura",
+    "poster_path": "/images/princess-mononoke.jpg"
+  },
+  {
+    "id": 5,
+    "title": "Ghost in the Shell",
+    "genre": "Ciencia ficción, Ciberpunk",
+    "poster_path": "/images/ghost-in-the-shell.jpg"
+  },
+  {
+    "id": 6,
+    "title": "Weathering with You",
+    "genre": "Romance, Fantasía",
+    "poster_path": "/images/weathering-with-you.jpg"
+  },
+  {
+    "id": 7,
+    "title": "Howl's Moving Castle",
+    "genre": "Fantasía, Aventura",
+    "poster_path": "/images/howls-moving-castle.jpg"
+  },
+  {
+    "id": 8,
+    "title": "My Neighbor Totoro",
+    "genre": "Fantasía, Infantil",
+    "poster_path": "/images/totoro.jpg"
+  }
+]
