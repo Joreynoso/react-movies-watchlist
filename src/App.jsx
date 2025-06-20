@@ -4,7 +4,6 @@ import MovieList from './components/MovieList'
 import Footer from './components/Footer'
 import { useState, useEffect } from 'react'
 
-
 function App() {
   const [isOpen, setIsOpen] = useState(false)
   const [watchlist, setWatchList] = useState(() => {
@@ -16,11 +15,14 @@ function App() {
   // --> Toggle watchlist
   function toggleWatchlist(movie) {
     setWatchList(prev => {
+      // Buscamos si la película ya está en la lista (comparando por ID)
       const exists = prev.find(m => m.id === movie.id);
 
+      // Si la película ya existe en la lista, la quitamos con filter
+      // sino, la incluimos con spread operator
       const updated = exists
-        ? prev.filter(m => m.id !== movie.id)
-        : [...prev, movie];
+        ? prev.filter(m => m.id !== movie.id) // quitar la película
+        : [...prev, movie]; // agregar pelicula
 
       return updated;
     })
@@ -45,11 +47,15 @@ function App() {
     setWatchList(prevWatchList => prevWatchList.filter((movie) => movie.id !== id))
   }
 
+  // --> Remove movie from watchlist
+  function removeAllMovies() {
+    setWatchList([])
+  }
+
   // --> Save watchlist to LocalStorage
   useEffect(() => {
     localStorage.setItem('watchlist', JSON.stringify(watchlist))
   }, [watchlist])
-
 
   return (
     <>
@@ -68,6 +74,7 @@ function App() {
         <Modal
           setIsOpen={setIsOpen}
           watchlist={watchlist}
+          removeAllMovies={ removeAllMovies }
           removeFromWatchList={removeFromWatchList}
         /> : null}
 

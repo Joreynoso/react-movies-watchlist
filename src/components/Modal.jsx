@@ -1,7 +1,8 @@
 import MovieCardModal from '../components/MovieCardModal'
 import ModalMessage from '../components/ModalMessage'
 
-export default function Modal({ setIsOpen, watchlist, removeFromWatchList }) {
+
+export default function Modal({ setIsOpen, watchlist, removeFromWatchList, removeAllMovies }) {
 
   const movieListModal = watchlist.map(movie => (
     <MovieCardModal
@@ -23,7 +24,7 @@ export default function Modal({ setIsOpen, watchlist, removeFromWatchList }) {
         <h1 className="text-xl font-semibold">My Movie Watchlist</h1>
 
         <div className="w-full flex flex-col gap-3 max-h-[60vh] overflow-y-auto pr-2">
-          { watchlist.length === 0 ? <ModalMessage/> : movieListModal }
+          {watchlist.length === 0 ? <ModalMessage /> : movieListModal}
         </div>
 
 
@@ -34,6 +35,14 @@ export default function Modal({ setIsOpen, watchlist, removeFromWatchList }) {
           >
             Close Modal
           </button>
+
+          { watchlist.length > 0 && <button
+            onClick={removeAllMovies}
+            className="rounded-xl bg-[#2B2A3A]/70 border border-[#383A4D] px-4 py-3 hover:bg-[#373549] transition-colors duration-200 text-white/60"
+          >
+            Borrar todas las peliculas
+          </button>}
+
         </div>
       </div>
     </div>
